@@ -1,0 +1,17 @@
+<resources>
+    <style name="Widget.SpeedQuiz.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorBackGround</item>
+    </style>
+
+    <style name="Joueur1.question" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@color/colorBackGround</item>
+    </style>
+
+    <style name="Widget.jeux.textview.Score1" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorJoueur1</item>
+    </style>
+
+    <style name="Widget.jeux.textview.Score2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorJoueur2</item>
+    </style>
+</resources>

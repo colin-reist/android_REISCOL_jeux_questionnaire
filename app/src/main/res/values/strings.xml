@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">VRAI OU FAUX</string>
+    <string name="Joueur_1">Joueur 1</string>
+    <string name="Joueur_2">Joueur 2</string>
+    <string name="Jouer">Jouer</string>
+    <string name="Parametres">Parametres</string>
+    <string name="Score_1">0</string>
+    <string name="Quitter">Quitter</string>
+    <string name="Rejouer">Rejouer</string>
+    <string name="Perdu">Vous avez perdu</string>
+    <string name="Gagne">Vous avez gagné</string>
+    <string name="Egalite">Egalité</string>
+    <string name="Countdown">5</string>
+    <string name="menu_favori">Favoris</string>
+    <string name="menu_delete">Supprimer</string>
+    <string name="menu_settings">Parametres</string>
+    <string name="ajout_questions">Ajoutez vos question</string>
+    <string name="confirmer">Confirmer</string>
+    <string name="Vrai">Vrai</string>
+    <string name="Durée_question">Durée du temps entre les questions</string>
+    <string name="Add_question">Votre question à été ajoutée</string>
+    <string name="Add_question_error">Votre question n\'a pas été ajoutée. Vérifiez que vous avez bien saisi quelque chose</string>
+</resources>

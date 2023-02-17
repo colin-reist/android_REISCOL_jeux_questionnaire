@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!-- Le nom des joueurs -->
+
+    <TextView
+        android:id="@+id/jeux_nom_joueur_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:rotation="180"
+        android:text="@string/Joueur_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintStart_toEndOf="@+id/jeux_score_joueur_1"
+        app:layout_constraintTop_toBottomOf="@+id/jeux_question_joueur_1" />
+
+    <TextView
+        android:id="@+id/jeux_nom_joueur_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/Joueur_2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/jeux_question_joueur_2"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintStart_toEndOf="@+id/jeux_score_joueur_1" />
+
+<!-- Le score des joueurs -->
+    <TextView
+        style="@style/Widget.jeux.textview.Score2"
+        android:id="@+id/jeux_score_joueur_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin"
+        android:text="@string/Score_1"
+        android:textSize="100sp"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/jeux_score_joueur_2"
+        style="@style/Widget.jeux.textview.Score1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin"
+        android:gravity="end"
+        android:text="@string/Score_1"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <!-- Les boutons d'actions pour donner une réponse -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/jeux_bouton_quitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin"
+        android:layout_marginBottom="180dp"
+        android:text="@string/Quitter"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_bouton_rejouer"
+        app:layout_constraintStart_toEndOf="@+id/jeux_score_joueur_1"
+        app:layout_constraintTop_toTopOf="@+id/jeux_score_joueur_2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/jeux_bouton_rejouer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin"
+        android:text="@string/Rejouer"
+        android:visibility="gone"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintStart_toEndOf="@+id/jeux_bouton_quitter"
+        app:layout_constraintTop_toTopOf="@+id/jeux_score_joueur_2" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.SpeedQuiz.Button"
+        android:id="@+id/button_joueur_1"
+        android:backgroundTint="@color/button_effect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="150dp"
+        android:layout_marginVertical="@dimen/main_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="150dp" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.SpeedQuiz.Button"
+        android:id="@+id/button_joueur_2"
+        android:backgroundTint="@color/button_effect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="150dp"
+        android:layout_marginVertical="@dimen/main_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+<!-- Les questions des joueurs-->
+    <TextView
+        android:id="@+id/jeux_question_joueur_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:rotation="180"
+        android:text="@string/Jouer"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/jeux_score_joueur_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_joueur_1" />
+
+    <TextView
+        android:id="@+id/jeux_question_joueur_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Jouer"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_joueur_2"
+        app:layout_constraintTop_toBottomOf="@+id/jeux_score_joueur_1" />
+
+    <TextView
+        android:id="@+id/jeux_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Countdown"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@+id/jeux_question_joueur_2"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_score_joueur_2"
+        app:layout_constraintStart_toEndOf="@+id/jeux_countdown_2"
+        app:layout_constraintTop_toBottomOf="@+id/jeux_question_joueur_1" />
+
+    <TextView
+        android:id="@+id/jeux_countdown_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Countdown"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@+id/jeux_question_joueur_2"
+        app:layout_constraintEnd_toStartOf="@+id/jeux_countdown"
+        app:layout_constraintStart_toEndOf="@+id/jeux_score_joueur_1"
+        app:layout_constraintTop_toBottomOf="@+id/jeux_question_joueur_1"
+        android:rotation="180"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
