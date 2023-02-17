@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,17 +31,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(MainToolBar);
 
         Button BT_Jouer = findViewById(R.id.main_button_jouer);
+
+        BT_Jouer.setOnClickListener(view -> {
+            lauchGame();
+        });
+    }
+    private void lauchGame() {
         TXT_Joueur1 = findViewById(R.id.main_joueur1_et);
         TXT_Joueur2 = findViewById(R.id.main_joueur2_et);
 
-        BT_Jouer.setOnClickListener(view -> {
-            Joueur1 = TXT_Joueur1.getText().toString();
-            Joueur2 = TXT_Joueur2.getText().toString();
+        Joueur1 = TXT_Joueur1.getText().toString();
+        Joueur2 = TXT_Joueur2.getText().toString();
+        if (Joueur1.isEmpty() || Joueur2.isEmpty()) {
+            Toast.makeText(this, "Veuillez entrer un nom pour les deux joueurs", Toast.LENGTH_SHORT).show();
+        } else {
             Intent jeux = new Intent(MainActivity.this, jeux.class);
             startActivity(jeux);
-        });
+        }
     }
-
     private void resetFields() {
         TXT_Joueur1.setText("");
         TXT_Joueur2.setText("");
