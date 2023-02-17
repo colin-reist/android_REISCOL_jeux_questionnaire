@@ -31,15 +31,20 @@ public class QuestionManager {
         this.index++;
     }
 
+    // Retourne si c'est la dernière question
     public boolean isLastQuestion() {
         int finListe = mesQuestions.size() -1;
         return index == finListe;
     }
-
     public void setIndex(int index) {
         this.index = index;
     }
 
+    /**
+     * Initialise la liste de question
+     * @param context contexte de l'application
+     * @return liste de question
+     */
     private ArrayList<Question> initQuestionList(Context context){
         ArrayList<Question> InitQuestion = new ArrayList<>();// crée une nouvel liste
         Jeux_questionnaireSQLite helper = new Jeux_questionnaireSQLite(context);// Instancie la base de données
@@ -59,6 +64,12 @@ public class QuestionManager {
         return InitQuestion;
     }
 
+    /**
+     * Ajoute une question à la base de donnée
+     * @param context contexte de l'application
+     * @param question question à ajouter à la base de donnée
+     * @param reponse réponse à la question
+     */
     public static void addQuestion(Context context, String question, int reponse){
         SQLiteDatabase db = new Jeux_questionnaireSQLite(context).getWritableDatabase();
         db.execSQL("INSERT INTO quiz VALUES(null,\" " + question + "\", " + reponse + ");");

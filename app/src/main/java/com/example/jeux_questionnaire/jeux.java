@@ -90,7 +90,10 @@ public class jeux extends AppCompatActivity {
         startCoutDownTimer();
     }
 
-    //
+    /**
+     * Lance le timer
+     * @param joueur 1 ou 2 pour séléctionner de quel joueur il faut utiliser
+     */
     private void joueurDonneReponse(int joueur) {
         //Désactive les boutons de réponse
         BT_Joueur1.setEnabled(false);
@@ -112,6 +115,11 @@ public class jeux extends AppCompatActivity {
         }
     }
 
+    /**
+     * Remet le compteur à 0 et lance le timer
+     * rend invisible les boutons de quitter et rejouer
+     * rend visible les compteurs
+     */
     private void rejouer() {
         scoreJoueur1.setText(String.valueOf(Integer.parseInt("0")));
         scoreJoueur2.setText(String.valueOf(Integer.parseInt("0")));
@@ -123,6 +131,9 @@ public class jeux extends AppCompatActivity {
         CountDownTimerText2.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * passe à la question suivante
+     */
     private void nextQuestion() {
         questionManager.prochaineQuestion();
         String question = questionManager.getQuestion();
@@ -160,6 +171,11 @@ public class jeux extends AppCompatActivity {
         }
     }
 
+    /**
+     * passe d'une question à l'autre
+     * permet de faire une boucle infinie tant que la dernière question n'est pas atteinte
+     * une fois à la fin de la boucle, lance la fonction finPartie()
+     */
     private void startQuestionIterative() {
         handler = new Handler();
 
@@ -177,10 +193,12 @@ public class jeux extends AppCompatActivity {
                 }
             }
         };
-
         handler.postDelayed(questionRunnable, 1000);
     }
 
+    /**
+     * Lance le timer
+     */
     private void startCoutDownTimer() {
         new CountDownTimer(temps, 1000) {
             public void onTick(long milliUntilFinished) {

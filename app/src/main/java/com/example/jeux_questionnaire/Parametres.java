@@ -44,6 +44,10 @@ public class Parametres extends AppCompatActivity {
             addQuestion();
         });
     }
+
+    /**
+     * Ajoute une question à la base de données
+     */
     private void addQuestion() {
         question = Question.getText().toString();
         CharSequence text;
@@ -67,9 +71,12 @@ public class Parametres extends AppCompatActivity {
         toast.show();
         QuestionManager.addQuestion(this, question, reponse);
     }
+
+    /**
+     * Capture la valeur du slider et la convertit en millisecondes
+     * pour la passer à la classe jeux
+     */
     private void setTime() {
-        // Capture la valeur du slider et la convertit en millisecondes
-        // pour la passer à la classe jeux
         jeux.temps = (long) timeSlider.getValue() * 1000 + 1000;
     }
 }

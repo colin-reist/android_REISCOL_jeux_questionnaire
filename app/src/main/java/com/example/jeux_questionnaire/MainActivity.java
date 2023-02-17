@@ -1,20 +1,17 @@
 package com.example.jeux_questionnaire;
-import androidx.appcompat.widget.Toolbar;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button BT_Jouer = findViewById(R.id.main_button_jouer);
 
-        BT_Jouer.setOnClickListener(view -> {
-            lauchGame();
-        });
+        BT_Jouer.setOnClickListener(view -> lauchGame());
     }
     // Lance le jeu si l'utilisateur a entré un nom pour les deux joueurs
     private void lauchGame() {
@@ -62,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
