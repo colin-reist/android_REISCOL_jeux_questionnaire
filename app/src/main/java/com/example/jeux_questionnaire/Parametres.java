@@ -17,18 +17,23 @@ public class Parametres extends AppCompatActivity {
     String question;
     int reponse = 0;
 
-    Slider timeSlider = findViewById(R.id.param_slider);
-    Button BT_Quitter = findViewById(R.id.parametre_bouton_quitter);
-    Button BT_Ajouter = findViewById(R.id.parametre_bouton_ajouter_question);
-    EditText Question = findViewById(R.id.parametre_question_et);
-    CheckBox checkBox = findViewById(R.id.parametre_checkbox);
-    Context context = getApplicationContext();
+    private Slider timeSlider;
+    private EditText Question;
+    private CheckBox checkBox;
+    private Context context;
     int duration = Toast.LENGTH_SHORT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parametre);
+
+        timeSlider = findViewById(R.id.param_slider);
+        Button BT_Quitter = findViewById(R.id.parametre_bouton_quitter);
+        Button BT_Ajouter = findViewById(R.id.parametre_bouton_ajouter_question);
+        Question = findViewById(R.id.parametre_question_et);
+        checkBox = findViewById(R.id.parametre_checkbox);
+        context = getApplicationContext();
 
         BT_Quitter.setOnClickListener(view -> {
             setTime();

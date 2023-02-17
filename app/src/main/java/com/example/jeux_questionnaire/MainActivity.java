@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             lauchGame();
         });
     }
+    // Lance le jeu si l'utilisateur a entré un nom pour les deux joueurs
     private void lauchGame() {
         TXT_Joueur1 = findViewById(R.id.main_joueur1_et);
         TXT_Joueur2 = findViewById(R.id.main_joueur2_et);
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(jeux);
         }
     }
+    // Remet les champs à zéro
     private void resetFields() {
         TXT_Joueur1.setText("");
         TXT_Joueur2.setText("");

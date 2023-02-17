@@ -16,17 +16,17 @@ public class QuestionManager {
     // Rajoute les questions dans la liste
     public QuestionManager(Context context)  { mesQuestions = initQuestionList(context);}
 
-    public static void addQuestion(String question, int reponse) {
-    }
-
+    // Retourne la question
     public String getQuestion() {
         return mesQuestions.get(index).getQuestion();
     }
 
+    // Retourne la réponse
     public int getReponse() {
         return mesQuestions.get(index).getReponse();
     }
 
+    // Passe à la prochaine question
     public void prochaineQuestion() {
         this.index++;
     }
