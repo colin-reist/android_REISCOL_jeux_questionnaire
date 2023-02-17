@@ -71,22 +71,16 @@ public class jeux extends AppCompatActivity {
         //Désactive les boutons de réponse,
         //Rajoute un point au joueur 2 si la réponse est juste
         //et enlève un point si la réponse est fausse
-        BT_Joueur1.setOnClickListener(view -> {
-            joueurDonneReponse(1);
-        });
+        BT_Joueur1.setOnClickListener(view -> joueurDonneReponse(1));
 
         //Désactive les boutons de réponse,
         //Rajoute un point au joueur 2 si la réponse est juste
         //et enlève un point si la réponse est fausse
-        BT_Joueur2.setOnClickListener(view -> {
-            joueurDonneReponse(2);
-        });
+        BT_Joueur2.setOnClickListener(view -> joueurDonneReponse(2));
 
         BT_Quitter.setOnClickListener(view -> finish());
 
-        BT_Rejouer.setOnClickListener(view -> {
-            rejouer();
-        });
+        BT_Rejouer.setOnClickListener(view -> rejouer());
         startCoutDownTimer();
     }
 

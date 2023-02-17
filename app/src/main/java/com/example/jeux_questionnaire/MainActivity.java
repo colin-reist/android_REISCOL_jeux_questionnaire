@@ -31,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         BT_Jouer.setOnClickListener(view -> lauchGame());
     }
-    // Lance le jeu si l'utilisateur a entré un nom pour les deux joueurs
+
+    /**
+     * Lance le jeu
+     */
     private void lauchGame() {
         TXT_Joueur1 = findViewById(R.id.main_joueur1_et);
         TXT_Joueur2 = findViewById(R.id.main_joueur2_et);
@@ -45,18 +48,31 @@ public class MainActivity extends AppCompatActivity {
             startActivity(jeux);
         }
     }
-    // Remet les champs à zéro
+
+    /**
+     * Réinitialise les champs de texte
+     */
     private void resetFields() {
         TXT_Joueur1.setText("");
         TXT_Joueur2.setText("");
     }
 
+    /**
+     * Crée le menu
+     * @param menu Menu
+     * @return true si le menu a été créé, false sinon
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
+    /**
+     * Gère les actions des boutons du menu
+     * @param item Bouton du menu
+     * @return true si l'action a été effectuée, false sinon
+     */
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

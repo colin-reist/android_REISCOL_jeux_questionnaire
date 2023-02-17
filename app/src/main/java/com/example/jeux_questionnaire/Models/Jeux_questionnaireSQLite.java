@@ -1,14 +1,8 @@
 package com.example.jeux_questionnaire.Models;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.example.jeux_questionnaire.Question;
-
-import java.sql.ResultSet;
 
 public class Jeux_questionnaireSQLite extends SQLiteOpenHelper {
 
